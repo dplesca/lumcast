@@ -2,12 +2,28 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Podcasts</title>
+
+	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/skeleton.css">
+	<style>
+	h3{font-weight: 600;}
+	</style>
 </head>
 <body>
-	<h3>Podcasts</h3>
-	<?php foreach($podcasts as $podcast): ?>
-	<li><a href="/<?= str_slug($podcast->title, '-') ?>-<?= $podcast->id ?>"><?= $podcast->title ?></a></li>
-	<?php endforeach; ?>
+	<div class="container">
+		<div class="row">
+			<div class="one-half column" style="margin-top:20px;">
+				<h3>Podcasts</h3>
+				<ul>
+					<?php foreach($podcasts as $podcast): ?>
+					<li><a href="/<?= str_slug($podcast->title, '-') ?>-<?= $podcast->id ?>"><?= $podcast->title ?></a></li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
