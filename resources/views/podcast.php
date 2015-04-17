@@ -17,17 +17,29 @@
 				<h1><a class="logo" href="/">lumcast</a></h1>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="pjax-container">
 			<div class="two-thirds column" style="margin-top:20px;">
-				<h3><?= $podcast->title ?></h3>
-				<p><img src="<?= $podcast->image ?>" class="u-pull-left left-image" width="200" alt=""><?= $podcast->description ?></p>
-				<ul>
-					<?php foreach($episodes as $key => $episode): ?>
-					<li><a href="/<?= str_slug($podcast->title, '-')?>-<?= $podcast->id ?>/<?= str_slug($episode->title, '-')?>-<?= $episode->id ?>"><?= $episode->title ?></a> - <?= $episode->description ?></li>
-					<?php endforeach; ?>
-				</ul>
+				<div>
+					<h2><?= $podcast->title ?></h2>
+					<p><img src="<?= $podcast->image ?>" class="u-pull-left left-image" width="200" alt=""><?= $podcast->description ?></p>
+				</div>
+				<div class="u-cf">
+					<h3>Episodes</h3>
+					<ul>
+						<?php foreach($episodes as $key => $episode): ?>
+						<li><a data-pjax href="/<?= str_slug($podcast->title, '-')?>-<?= $podcast->id ?>/<?= str_slug($episode->title, '-')?>-<?= $episode->id ?>"><?= $episode->title ?></a> - <?= $episode->description ?></li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="/js/jquery.pjax.js"></script>
+	<script>
+	$(function(){
+		$(document).pjax('a[data-pjax]', '#pjax-container', { "fragment": "#pjax-container" });
+	});
+	</script>
 </body>
 </html>

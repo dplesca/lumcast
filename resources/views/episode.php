@@ -22,7 +22,7 @@
 				<h1><a class="logo" href="/">lumcast</a></h1>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="pjax-container">
 			<div class="nine columns">
 				<h3><a href="/<?= str_slug($podcast->title) ?>-<?= $podcast->id ?>"><?= $podcast->title ?></a> - <?= $episode->title ?></h3>
 				<p><?= $episode->description ?></p>
