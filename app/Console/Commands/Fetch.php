@@ -15,7 +15,7 @@ class Fetch extends Command {
 	 *
 	 * @var string
 	 */
-	protected $description = 'Display an inspiring quote';
+	protected $description = 'Fetch recent episodes of podcasts';
 	/**
 	 * Execute the console command.
 	 *
@@ -29,7 +29,7 @@ class Fetch extends Command {
 			$last_build = date('Y-m-d H:i:s', strtotime($xml->channel->lastBuildDate));
 			if ($last_build > $podcast->last_build_date){
 				//we got something new
-				$this->comment('Update podcast: ' . $podcast->title . PHP_EOL);
+				$this->info('Update podcast: ' . $podcast->title . PHP_EOL);
 
 				foreach ($xml->channel->item as $key => $item) {
 					$namespaces = $item->getNameSpaces(true);
