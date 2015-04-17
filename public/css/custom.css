@@ -1,5 +1,6 @@
-.logo{text-decoration: none;color:inherit;}
+.logo, h3 a{text-decoration: none;color:inherit;}
 .logo-row{margin-top: 20px;}
+.left-image{margin: 0 15px 10px 0;}
 .pod figure {
 	margin: 0;
 	position: relative;
