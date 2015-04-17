@@ -15,7 +15,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="one-half column" style="margin-top:20px;">
+			<div class="two-thirds column" style="margin-top:20px;">
 				<h3><?= $podcast->title ?></h3>
 				<ul>
 					<?php foreach($episodes as $key => $episode): ?>
