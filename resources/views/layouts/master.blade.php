@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="/css/custom.css">
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="/js/jquery.leanmodal.js"></script>
+	<script src="/js/jquery.form.js"></script>
 	<script src="/js/jquery.pjax.js"></script>
 	<script src="/js/soundmanager2.js"></script>
 	<script src="/js/bar-ui.js"></script>
@@ -20,8 +22,9 @@
 <body>
 	<div class="container">
 		<div class="row logo-row">
-			<div class="nine columns">
+			<div class="eleven columns">
 				<h1><a data-pjax class="logo" href="/">lumcast</a></h1>
+				<small><a href="#newform" class="button" rel="leanModal">Add new podcast</a></small>
 			</div>
 		</div>
 
@@ -31,5 +34,6 @@
 		
 	</div>
 	@include('partials.player')
+	@include('partials.newform')
 </body>
 </html>

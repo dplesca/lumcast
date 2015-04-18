@@ -28,3 +28,25 @@ $app->get('/{podcast_slug}-{podcast_id}/{episode_slug}-{episode_id}', function($
 	$episode = Episode::findOrFail($episode_id);
     return view('episode', ['podcast' => $podcast, 'episode' => $episode]);
 });
+
+$app->post('/new', function() use ($app){
+	$r = ['status' => 0];
+	$link = Request::input('link');
+	try{
+		$xml = simplexml_load_file($link, null, LIBXML_NOCDATA);
+		if ($xml !== false){
+			$podcast = [
+				'title' => (string)$xml->channel->title,
+				'description' => (string)$xml->channel->description,
+				'url' => $link,
+				'image' => (string)$xml->channel->image->url,
+				'active' => 1
+			];
+			Podcast::create($podcast);
+			$r['status'] = 1;
+		}
+	} catch(Exception $e){
+		return $r;
+	}
+	return $r;
+});
