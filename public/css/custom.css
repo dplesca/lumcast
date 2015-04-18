@@ -49,3 +49,6 @@ figure:hover figcaption{
 	font-size:16px;
 	font-weight: 600;
 }
+.hidden{
+	display:none;
+}
