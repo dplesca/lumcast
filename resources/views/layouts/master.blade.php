@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Podcasts</title>
+	<title>@yield('title')</title>
 
 	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="/css/normalize.css">
@@ -24,19 +24,12 @@
 				<h1><a data-pjax class="logo" href="/">lumcast</a></h1>
 			</div>
 		</div>
+
 		<div class="row" id="pjax-container">
-			<?php foreach($podcasts as $podcast): ?>
-			<div class="three columns pod">
-				<figure>
-					<a data-pjax href="/<?= str_slug($podcast->title, '-') ?>-<?= $podcast->id ?>"><img class="u-max-full-width" src="<?= $podcast->image ?>" /></a>
-					<figcaption>
-						<span class="title"><?= $podcast->title ?></span>
-					</figcaption>
-				</figure>
-			</div>
-			<?php endforeach; ?>
+		@yield('content')
 		</div>
+		
 	</div>
-	<?php require_once __DIR__ .'/player.php';?>
+	@include('partials.player')
 </body>
 </html>
