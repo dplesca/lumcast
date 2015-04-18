@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-<div class="two-thirds column" style="margin-top:20px;">
+<div class="two-thirds column">
 	<div>
 		<h2><?= $podcast->title ?></h2>
 		<p><img src="<?= $podcast->image ?>" class="u-pull-left left-image" width="200" alt=""><?= $podcast->description ?></p>
