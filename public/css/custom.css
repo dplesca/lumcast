@@ -91,3 +91,13 @@ figure:hover figcaption{
 .m0{
 	margin-left: 0;
 }
+@media (min-width: 400px) {
+	small{
+		display: none;
+	}
+}
+@media (min-width: 1000px) {
+	small{
+		display: block;
+	}
+}
