@@ -27,7 +27,8 @@ class Fetch extends Command {
 		foreach ($podcasts as $podcast) {
 			$xml = simplexml_load_file($podcast->url, null, LIBXML_NOCDATA);
 			$last_build = date('Y-m-d H:i:s', strtotime($xml->channel->lastBuildDate));
-			if ($last_build > $podcast->last_build_date){
+
+			if ($last_build > $podcast->last_build_date || !strtotime($xml->channel->lastBuildDate)){
 				//we got something new
 				$this->info('Update podcast: ' . $podcast->title . PHP_EOL);
 
