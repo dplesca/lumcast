@@ -33,21 +33,25 @@ class Fetch extends Command {
 				$this->info('Update podcast: ' . $podcast->title . PHP_EOL);
 
 				foreach ($xml->channel->item as $key => $item) {
-					$namespaces = $item->getNameSpaces(true);
-					$nodes = $item->children($namespaces['itunes']);
+					$mp3_url = (string)$item->enclosure->attributes()->url;
+					$existing_episode = Episode::where('mp3_url', $mp3_url)->first();
+					if (!$existing_episode){
+						$namespaces = $item->getNameSpaces(true);
+						$nodes = $item->children($namespaces['itunes']);
 
-					$new_episode = new Episode;
-					$new_episode->podcast_id = $podcast->id;
-					$new_episode->title = (string)$item->title;
-					$new_episode->description = (string)$item->description;
-					$new_episode->mp3_url = (string)$item->enclosure->attributes()->url;
-					$new_episode->pub_date = date('Y-m-d H:i:s', strtotime((string)$item->pubDate));
-					$new_episode->duration = $nodes->duration;
-					$new_episode->save();
+						$new_episode = new Episode;
+						$new_episode->podcast_id = $podcast->id;
+						$new_episode->title = (string)$item->title;
+						$new_episode->description = (string)$item->description;
+						$new_episode->mp3_url = (string)$item->enclosure->attributes()->url;
+						$new_episode->pub_date = date('Y-m-d H:i:s', strtotime((string)$item->pubDate));
+						$new_episode->duration = $nodes->duration;
+						$new_episode->save();
 
-					$this->comment('Added episode: ' . $new_episode->title . PHP_EOL);
-					$podcast->last_build_date = $last_build;
-					$podcast->save();
+						$this->comment('Added episode: ' . $new_episode->title . PHP_EOL);
+						$podcast->last_build_date = $last_build;
+						$podcast->save();
+					}
 				}
 			}
  			
