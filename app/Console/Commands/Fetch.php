@@ -33,7 +33,7 @@ class Fetch extends Command {
 				$this->info('Update podcast: ' . $podcast->title . PHP_EOL);
 
 				foreach ($xml->channel->item as $key => $item) {
-					$mp3_url = (string)$item->enclosure->attributes()->url;
+					$mp3_url = strtok((string)$item->enclosure->attributes()->url, '?');
 					$existing_episode = Episode::where('mp3_url', $mp3_url)->first();
 					if (!$existing_episode){
 						$namespaces = $item->getNameSpaces(true);
@@ -43,7 +43,7 @@ class Fetch extends Command {
 						$new_episode->podcast_id = $podcast->id;
 						$new_episode->title = (string)$item->title;
 						$new_episode->description = (string)$item->description;
-						$new_episode->mp3_url = (string)$item->enclosure->attributes()->url;
+						$new_episode->mp3_url = $mp3_url;
 						$new_episode->pub_date = date('Y-m-d H:i:s', strtotime((string)$item->pubDate));
 						$new_episode->duration = $nodes->duration;
 						$new_episode->save();
