@@ -51,6 +51,8 @@ class Fetch extends Command {
 						$this->comment('Added episode: ' . $new_episode->title . PHP_EOL);
 						$podcast->last_build_date = $last_build;
 						$podcast->save();
+					} else {
+						$this->comment('Episode with url ' . $mp3_url . ' already exists.');
 					}
 				}
 			}
