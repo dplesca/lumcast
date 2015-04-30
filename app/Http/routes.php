@@ -19,7 +19,7 @@ $app->get('/', function() use ($app) {
 
 $app->get('/{podcast_slug}-{id}', function($podcast_slug, $id) use ($app) {
 	$podcast = Podcast::findOrFail($id);
-	$episodes = Episode::where('podcast_id', $podcast->id)->take(15)->get();
+	$episodes = Episode::where('podcast_id', $podcast->id)->orderBy('pub_date', 'desc')->take(15)->get();
     return view('podcast', ['podcast' => $podcast, 'episodes' => $episodes]);
 });
 

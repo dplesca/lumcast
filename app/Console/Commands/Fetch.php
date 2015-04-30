@@ -30,7 +30,7 @@ class Fetch extends Command {
 
 			if ($last_build > $podcast->last_build_date || !strtotime($xml->channel->lastBuildDate)){
 				//we got something new
-				$this->info('Update podcast: ' . $podcast->title . PHP_EOL);
+				$this->info(date('Y-m-d H:i:s') . ' Update podcast: ' . $podcast->title . PHP_EOL);
 
 				foreach ($xml->channel->item as $key => $item) {
 					$mp3_url = strtok((string)$item->enclosure->attributes()->url, '?');
@@ -48,11 +48,9 @@ class Fetch extends Command {
 						$new_episode->duration = $nodes->duration;
 						$new_episode->save();
 
-						$this->comment('Added episode: ' . $new_episode->title . PHP_EOL);
+						$this->comment(date('Y-m-d H:i:s') . ' Added episode: ' . $new_episode->title . PHP_EOL);
 						$podcast->last_build_date = $last_build;
 						$podcast->save();
-					} else {
-						$this->comment('Episode with url ' . $mp3_url . ' already exists.');
 					}
 				}
 			}
