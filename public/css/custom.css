@@ -91,6 +91,42 @@ figure:hover figcaption{
 .m0{
 	margin-left: 0;
 }
+.mejs-container .mejs-controls{
+	background: none;
+}
+.mejs-audio{
+	position: fixed;
+	bottom: 0;
+}
+.mejs-container{
+	background: #33C3F0;
+}
+.mejs-container .mejs-controls div {
+	font-family: Raleway, sans-serif;
+}
+.mejs-container .mejs-controls div.display-playback-speed{
+	width:50px;
+	text-align: center;
+	cursor: pointer;
+}
+.mejs-container .display-playback-speed span{
+	color: #fff;
+	line-height: 32px;
+	font-weight: 600;
+}
+.mejs-controls .mejs-time-rail .mejs-time-current, .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current{
+	background:#fff;
+}
+.mejs-controls .mejs-time-rail .mejs-time-loaded{
+	background: #fafafa;
+	opacity: 0.5;
+}
+.mejs-controls .mejs-time-rail .mejs-time-buffering{
+	background: #fafafa;
+}
+.mejs-controls .mejs-time-rail .mejs-time-total, .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total{
+	background: #1EAEDB;
+}
 @media (min-width: 400px) {
 	small{
 		display: none;

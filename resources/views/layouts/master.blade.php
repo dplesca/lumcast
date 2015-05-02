@@ -10,15 +10,14 @@
 	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/skeleton.css">
-	<link rel="stylesheet" href="/css/bar-ui.css">
+	<link rel="stylesheet" href="/css/mediaelementplayer.min.css">
 	<link rel="stylesheet" href="/css/custom.css">
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="/js/jquery.leanmodal.js"></script>
 	<script src="/js/jquery.form.js"></script>
 	<script src="/js/jquery.pjax.js"></script>
-	<script src="/js/soundmanager2.js"></script>
-	<script src="/js/bar-ui.js"></script>
+	<script src="/js/mediaelement-and-player.min.js"></script>
 	<script src="/js/custom.js"></script>
 </head>
 <body>
