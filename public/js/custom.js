@@ -16,9 +16,8 @@ $(function(){
 				features: ['playpause','loop','current','progress','duration','volume', 'fasterslower'],
 				success: function(media, node, player) {
 					media.addEventListener('loadeddata', function() {
-			            console.log('addEventListener - loadeddata')  
-			            player.play();          
-			        }, false);
+						player.play();
+					}, false);
 				}
 			});
 		}
