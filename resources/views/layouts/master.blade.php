@@ -13,12 +13,6 @@
 	<link rel="stylesheet" href="/css/mediaelementplayer.min.css">
 	<link rel="stylesheet" href="/css/custom.css">
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="/js/jquery.leanmodal.js"></script>
-	<script src="/js/jquery.form.js"></script>
-	<script src="/js/jquery.pjax.js"></script>
-	<script src="/js/mediaelement-and-player.min.js"></script>
-	<script src="/js/custom.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -36,5 +30,11 @@
 	</div>
 	@include('partials.player')
 	@include('partials.newform')
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="/js/jquery.leanmodal.js"></script>
+	<script src="/js/jquery.form.js"></script>
+	<script src="/js/jquery.pjax.js"></script>
+	<script src="/js/mediaelement-and-player.min.js"></script>
+	<script src="/js/custom.js"></script>
 </body>
 </html>
