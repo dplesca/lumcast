@@ -127,6 +127,15 @@ figure:hover figcaption{
 .mejs-controls .mejs-time-rail .mejs-time-total, .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total{
 	background: #1EAEDB;
 }
+.mejs-container div.display-playback-title{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-weight: 600;
+	font-size: 15px;
+	top: -10px;
+}
 @media (min-width: 400px) {
 	small{
 		display: none;

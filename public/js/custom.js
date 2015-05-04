@@ -13,10 +13,12 @@ $(function(){
 		} else {
 			$('.player audio').attr('src', mp3_url).mediaelementplayer({
 				audioWidth: $(document).width(),
-				features: ['playpause','loop','current','progress','duration','volume', 'fasterslower'],
+				audioHeight: 50,
+				features: ['playpause','loop','current','progress','duration','volume', 'fasterslower', 'mp3title'],
 				success: function(media, node, player) {
 					media.addEventListener('loadeddata', function() {
 						player.play();
+						$('.display-playback-title').text($('a.play').data('title'));
 					}, false);
 				}
 			});
