@@ -14,7 +14,7 @@ use App\Episode;
 
 $app->get('/', function() use ($app) {
 	$podcasts = Podcast::where('active', 1)->orderBy('last_build_date')->get();
-    return view('home', ['podcasts' => $podcasts]);
+    return view('home', ['podcasts' => $podcasts, 'latest' => Episode::getLatestEpisodes()]);
 });
 
 $app->get('/{podcast_slug}-{id}', function($podcast_slug, $id) use ($app) {
