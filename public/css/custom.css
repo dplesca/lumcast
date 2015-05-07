@@ -1,4 +1,5 @@
-.logo, h3 a{text-decoration: none;color:inherit;}
+.logo, h3 a, h6 a{text-decoration: none;color:inherit;}
+h2, h3, h4, h5, h6{font-weight: 600;}
 .logo-row{margin-top: 20px;}
 .left-image{margin: 0 15px 10px 0;}
 .pod figure {
