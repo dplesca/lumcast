@@ -137,6 +137,11 @@ figure:hover figcaption{
 	font-size: 15px;
 	top: -10px;
 }
+.mejs-time span{
+	font-family: 'Inconsolata', monospace;
+	font-size: 13px;
+}
+
 @media (min-width: 400px) {
 	small{
 		display: none;

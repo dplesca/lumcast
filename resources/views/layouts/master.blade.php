@@ -8,6 +8,7 @@
 	<link rel="shortcut icon" href="/favicon.png">
 
 	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inconsolata&text=1234567890">
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/skeleton.css">
 	<link rel="stylesheet" href="/css/mediaelementplayer.min.css">
