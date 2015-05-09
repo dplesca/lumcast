@@ -141,6 +141,10 @@ figure:hover figcaption{
 	font-family: 'Inconsolata', monospace;
 	font-size: 13px;
 }
+.mejs-controls .mejs-time-rail .mejs-time-float{
+	z-index: 10;
+	font-family: 'Inconsolata', monospace;
+}
 
 @media (min-width: 400px) {
 	small{
